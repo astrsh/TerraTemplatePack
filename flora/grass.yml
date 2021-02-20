@@ -1,0 +1,12 @@
+id: "GRASS"
+
+layers:
+  - materials:
+      - "minecraft:grass": 1
+    layers: 1
+
+spawnable:
+  - "minecraft:grass_block"
+
+replaceable:
+  - "minecraft:air"
