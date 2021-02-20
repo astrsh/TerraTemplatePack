@@ -9,6 +9,25 @@ palette:
   - GENERIC: 255
   - "BLOCK:minecraft:bedrock": 0
 
+# TODO: Add explanation for flora
+flora:
+  - density: 20
+    items:
+      - TALL_GRASS: 1
+      - GRASS: 2
+    y:
+      min: 64
+      max: 255
+
+# TODO: Add explanation for trees
+trees:
+  - density: 2
+    items:
+      - OAK_TREE: 1
+    y:
+      min: 64
+      max: 255
+
 # TODO: Add explanation for noise functions within noise equations
 #       as well as formatting tricks as shown
 noise-equation: |
