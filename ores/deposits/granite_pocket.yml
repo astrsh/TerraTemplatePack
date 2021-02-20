@@ -1,0 +1,3 @@
+id: "GRANITE"
+extends: DEPOSIT
+material: "minecraft:granite"

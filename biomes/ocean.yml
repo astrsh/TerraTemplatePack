@@ -1,0 +1,11 @@
+id: "OCEAN"
+vanilla: OCEAN
+extends: BASE
+
+palette:
+  - GENERIC: 255
+  - "BLOCK:minecraft:bedrock": 0
+
+noise-equation: |
+  -y + 40
+  + simplex(x, z) * 10

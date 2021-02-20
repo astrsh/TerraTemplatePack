@@ -1,0 +1,55 @@
+# The explanations in this config assume you have read
+# through the plains.yml configuration file.
+
+id: "BASE"
+
+
+
+abstract: true
+  # This configuration file does not create a 'real biome'
+  # but rather a template that other biomes can borrow from
+  # This is referred to as an 'abstract' biome and must have
+  # abstract set to true to be one.
+
+  # Biomes that borrow from this biome, referred to as
+  # 'inheritance', will take every key below this comment
+  # and add it to their own configuration. If a biome that
+  # inherits from an abstract biome also contains the same
+  # key, then that biome's key will take priority.
+
+  # Abstraction is a feature available to all Terra objects,
+  # which means that other Terra objects like ore, palette,
+  # and flora configurations can also be either abstracted,
+  # or inherit from abstracted objects - or *both*.
+
+  # For example biome A can inherit from biome B (abstract),
+  # which then can inherit from biome C (abstract).
+
+
+
+ores:
+  # The ore key determines how ores generate within a biome
+  # Each key under it is named after a user-defined ore ID.
+  # The files for the following ore IDs can be found in the
+  # 'ores' folder in the root of the pack.
+
+  DIAMOND_ORE:
+    # Ore deposits are handled on a per-chunk basis,
+    # and as such min & max define how many spawn per chunk
+    min: 1
+    max: 2
+
+    # The height min & max refers to the range of Y-levels
+    # deposits can spawn at
+    min-height: 7
+    max-height: 20
+
+  # Ore deposits are not limited to vanilla ores, for example
+  # features such as dirt patches, and pockets of
+  # granite, andesite and diorite can be handled through
+  # ore configurations:
+  DIRT:
+    min: 0
+    max: 1
+    min-height: 0
+    max-height: 128

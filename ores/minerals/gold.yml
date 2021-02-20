@@ -1,0 +1,6 @@
+id: "GOLD_ORE"
+extends: MINERAL
+material: "minecraft:gold_ore"
+size:
+  min: 9
+  max: 9

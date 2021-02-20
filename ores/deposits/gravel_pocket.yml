@@ -1,0 +1,3 @@
+id: "GRAVEL"
+extends: DEPOSIT
+material: "minecraft:gravel"

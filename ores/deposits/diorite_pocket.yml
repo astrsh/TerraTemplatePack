@@ -1,0 +1,3 @@
+id: "DIORITE"
+extends: DEPOSIT
+material: "minecraft:diorite"

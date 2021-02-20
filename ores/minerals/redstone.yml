@@ -1,0 +1,6 @@
+id: "REDSTONE_ORE"
+extends: MINERAL
+material: "minecraft:redstone_ore"
+size:
+  min: 8
+  max: 32

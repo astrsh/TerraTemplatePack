@@ -1,0 +1,6 @@
+id: "DIAMOND_ORE"
+extends: MINERAL
+material: "minecraft:diamond_ore"
+size:
+  min: 4
+  max: 4

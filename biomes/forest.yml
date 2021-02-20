@@ -1,0 +1,19 @@
+# The explanations in this config assume you have read
+# through the base.yml configuration file.
+
+id: "FOREST"
+vanilla: FOREST
+extends: BASE
+
+palette:
+  - GENERIC: 255
+  - "BLOCK:minecraft:bedrock": 0
+
+# TODO: Add explanation for noise functions within noise equations
+#       as well as formatting tricks as shown
+noise-equation: |
+  // Base equation
+  -y + 64
+
+  // 
+  + (simplex(x, z)+1)/2 * 10

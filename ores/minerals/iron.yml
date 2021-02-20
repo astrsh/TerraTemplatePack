@@ -1,0 +1,6 @@
+id: "IRON_ORE"
+extends: MINERAL
+material: "minecraft:iron_ore"
+size:
+  min: 11
+  max: 11

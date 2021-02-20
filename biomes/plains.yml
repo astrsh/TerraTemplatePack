@@ -1,0 +1,85 @@
+# The explanations in this config assume you have read
+# through the pack.yml configuration file.
+
+id: "PLAINS"
+  # The ID that other config files will use
+  # to refer to this file, similar to ID in pack.yml.
+  # Every biome configuration will require an ID
+  # (as is the case with many other config types).
+
+vanilla: PLAINS
+  # Must be a valid vanilla biome ID!
+  # The vanilla key controls which vanilla minecraft biome
+  # the Terra biome will use for things like grass colours,
+  # weather, mob spawning etc.. And is required for
+  # every biome configuration.
+
+
+
+extends: BASE
+  # The extends key refers to the ID of an abstract biome
+  # from which this biome will borrow features from.
+  # Feel free to check out base.yml for a proper
+  # explanation of what abstract biomes are, and how
+  # they interact with regular biomes.
+  # This key is not required for any given biome configuration.
+
+
+
+palette:
+  # Palettes define the basic composition of blocks that
+  # will make up terrain.
+  # The palette key is REQUIRED for any biome configuration
+  # (unless it is inherited from an abstract biome).
+
+  - GENERIC: 255
+    # Everything* below Y=255 will use the 'GENERIC' palette,
+    # however will be overridden by palettes that are configured
+    # to generate at a lower Y-level
+
+    # The GENERIC palette is a user-defined palette that can be
+    # found in the palettes folder from the root folder of the pack
+    # I suggest having a look at how the GENERIC palette is configured
+    # before continuing.
+
+  #- "BLOCK:minecraft:<block ID>": <Y-level>
+    # Feel free to un-comment and fill in the line above with
+    # whatever you'd like and see how it behaves in the world:
+
+  - "BLOCK:minecraft:bedrock": 0
+    # Everything at Y=0 and below will use bedrock as a palette,
+    # this palette will override GENERIC because its configured
+    # at a lower Y-level
+
+
+
+noise-equation: "-y + 64"
+  # This is a noise equation, the purpose of this is to determine
+  # the *shape* of terrain. Noise equations are essentially math
+  # equations that get calculated for every coordinate within the biome,
+  # that determine whether terrain should exist there or not.
+
+  # Just like palettes, noise equations are REQUIRED for any biome
+  # configuration unless inherited from an abstract biome.
+
+  # The logic is as follows: if the output of the noise function
+  # at x, y, z is positive, then place terrain, otherwise if the
+  # output is negative, place air.
+  # Here is a visualization of the noise equation above:
+  # https://www.desmos.com/calculator/l4ytcubhpa
+
+  # Going off the graph, every coordinate below y=64 will
+  # be positive, therefore every coordinate below y=64 will
+  # be solid terrain. As a result, flat landscape
+  # with the surface level at Y=64 will generate for this noise equation.
+
+  # Noise equations can take a couple variables, more specifically:
+  # x, y, z, and any user-defined variables.
+  # The interesting part of equations comes in when you introduce
+  # noise functions, but you'll have to refer to the Terra wiki
+  # and or ask somebody for a more in-depth explanation, as there
+  # is too much to cover here.
+
+  # Noise equations are one of the more difficult concepts to grasp
+  # in Terra and can get very complicated, so don't worry if you
+  # initially have trouble understanding.

@@ -1,0 +1,3 @@
+id: "DIRT"
+extends: DEPOSIT
+material: "minecraft:dirt"
