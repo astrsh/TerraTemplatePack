@@ -120,7 +120,7 @@ biomes:
     #
     # Essentially you can think about the pipeline like a procedurally
     # generated image, that has a bunch of effects and transformations
-    # applied to it. However instead of colors in that generated image,
+    # applied to it. However instead of pixels in that generated image,
     # it would be biomes.
     #
     # You start with a beginning 'image' defined under the source key,
@@ -131,6 +131,9 @@ biomes:
     # to them and can do things like replace specific biomes with
     # a list of other biomes, or make one biome border another
     # (for example beaches bordering land).
+    #
+    # NOTE: The pipeline key will be ignored if the
+    #       provider is not set to PIPELINE.
 
     source:
       # Here is the base 'image' as explained earlier.
