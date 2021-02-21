@@ -207,3 +207,81 @@ biomes:
             # This behaves similarly to how the 'noise: '
             # for the source arranges biomes.
             type: OpenSimplex2
+            frequency: 0.03
+
+
+      # The second mutator - changes here will be applied AFTER
+      # the land biomes are arranged using the replace mutator above.
+      - mutate: 
+          type: BORDER
+            # The border mutator is similar to replace in
+            # a sense that it also replaces biomes.
+            # The difference is that the border only replaces
+            # specified biome(s) where they border other biome(s).
+
+          from: OCEAN
+            # Here is where we specify what is going to
+            # be surrounded by a border of another biome.
+            # In this case, instead of prefixing "BIOME:"
+            # like the above mutator, we can instead provide
+            # something called a tag. 
+            # Tags are a special system for categorizing
+            # biomes, such that they can easily be assigned
+            # to various mutators within the biome pipeline.
+            # Tags are user-defined and can be arbitrarily
+            # assigned within each biome configuration.
+            #
+            # Every ocean based biome in this pack will have
+            # the OCEAN tag applied to it, meaning that every
+            # biome we have tagged with OCEAN will have this
+            # border mutator applied to it.
+
+          to:
+            - BEACH: 1
+            # A weighted list of biomes we want to border
+            # the biome(s) specified in the 'from: ' key.
+            # In this case, we want the BEACH biome to
+            # border every biome tagged with 'OCEAN'.
+
+          replace: LAND
+            # Finally we decide what will be replaced.
+            # We specify the LAND tag, meaning that anywhere
+            # that is tagged LAND that borders a biome tagged OCEAN
+            # will be replaced with the BEACH biome. 
+
+            # Something to note is that both the 'from: ' and
+            # 'replace: ' keys should specify a tag (technically
+            # the BIOME: prefix is also a tag!), whereas the
+            # 'to: ' key should specify a biome ID.
+
+          noise:
+            type: Constant
+            # Since we only have one biome under 'to: ', we
+            # can just use the constant noise type which means Terra
+            # won't have to do unnecessary noise calculations.
+
+      - expand:
+          type: FRACTAL
+          noise:
+            type: WhiteNoise
+            salt: 1
+      - expand:
+          type: FRACTAL
+          noise:
+            type: WhiteNoise
+            salt: 2
+      - mutate:
+          type: SMOOTH
+          noise:
+            type: WhiteNoise
+            salt: 1
+      - mutate:
+          type: SMOOTH
+          noise:
+            type: WhiteNoise
+            salt: 2
+      - mutate:
+          type: SMOOTH
+          noise:
+            type: WhiteNoise
+            salt: 3
