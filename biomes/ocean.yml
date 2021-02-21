@@ -1,6 +1,8 @@
 id: "OCEAN"
 vanilla: OCEAN
 extends: BASE
+tags:
+  - OCEAN
 
 palette:
   - GENERIC: 255

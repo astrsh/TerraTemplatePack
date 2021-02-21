@@ -26,6 +26,10 @@ extends: BASE
 
 
 
+tags:
+  - LAND
+
+
 palette:
   # Palettes define the basic composition of blocks that
   # will make up terrain.

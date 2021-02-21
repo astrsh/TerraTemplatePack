@@ -168,13 +168,38 @@ biomes:
       # For example, you will want to assign climates first
       # before you assign the biomes within the climates.
 
-      # TODO: Finish stages + explanations of each
+      # Here is our first mutator that will be applied to the source.
       - mutate:
           type: REPLACE
+          # The replace mutator is pretty self-explanatory, it
+          # replaces one thing with another thing. In this case
+          # those things are biomes.
+
           from: "BIOME:PLAINS"
+            # Here we define what exactly we are replacing.
+            # In this case we are replacing anywhere that
+            # is assigned to the PLAINS biome. If you recall
+            # from earlier, we treated PLAINS as our placeholder
+            # for land, meaning here we are basically assigning the
+            # biomes we want to replace land with.
+  
           to:
-            - PLAINS: 2
-            - FOREST: 1
+            # Here is another weighted list
+            # similar to the one we used in our source.
+            # They'll be showing up very often so get
+            # familiar with the concept!
+            # We will be replacing any area that is the
+            # PLAINS biome with this weighted list:
+            - FOREST: 2
+            - PLAINS: 1 # We can include a biome in its
+                        # own replacement list, meaning
+                        # part of it will still remain
+                        # after the mutator has been applied.
+
           noise:
+            # The noise function that will determine
+            # the shape of the arrangement of biomes
+            # that will replace the PLAINS biome.
+            # This behaves similarly to how the 'noise: '
+            # for the source arranges biomes.
             type: OpenSimplex2
-            frequency: 0.03

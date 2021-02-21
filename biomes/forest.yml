@@ -4,6 +4,8 @@
 id: "FOREST"
 vanilla: FOREST
 extends: BASE
+tags:
+  - LAND
 
 palette:
   - GENERIC: 255
