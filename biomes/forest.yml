@@ -18,7 +18,7 @@ flora:
       - TALL_GRASS: 1
       - GRASS: 2
     y:
-      min: 64
+      min: 63
       max: 255
 
 # TODO: Add explanation for trees

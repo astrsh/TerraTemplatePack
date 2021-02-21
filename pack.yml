@@ -12,7 +12,7 @@ id: TEMPLATE
 author: Astrash
   # Self explanatory - the author of the pack
 
-version: "1.0.0 for Terra v4.2.0-beta+"
+version: "1.0.0 for Terra v4.3.0-beta+"
   # The version of the pack (can be named whatever).
   # In this case, I've included the Terra
   # version this pack was written for.
@@ -75,8 +75,8 @@ biomes:
     # significant performance decreases and I highly recommend
     # not going below 3. Conversely, increasing the resolution
     # will grant performance boosts quadratically, at the cost
-    # of blockier biome blends
-    # (which can be mitigated in the next section).
+    # of blockier biome blends (which can be mitigated
+    # in the next section).
 
     #   Resolution = 1         Resolution = 2
     #
@@ -146,17 +146,21 @@ biomes:
               # shapes your base image
         dimensions: 2
         type: OpenSimplex2
-        frequency: 0.02
+        frequency: 0.04
 
       biomes:
         # A weighted list of biomes that gets applied to the noise
 
-        PLAINS: 1 # We will treat the PLAINS biome as the land
-        OCEAN: 1
+        PLAINS: 2 # We will treat the PLAINS biome as a placeholder
+        OCEAN: 1  # for land and the OCEAN as the... ocean.
+                  # Something to note here is that PLAINS has
+                  # a weight of 2, meaning that it will take up
+                  # roughly twice the space of OCEAN - meaning there
+                  # will be twice* as much land as there is water!
 
     stages:
       # Here are where the 'filters' get applied in
-      # sequence to the base defined under source.
+      # sequence to the base we defined earlier under source.
       #
       # Because stages can affect every subsequent
       # stage, the order of operations is very important.
