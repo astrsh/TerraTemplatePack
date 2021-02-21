@@ -1,0 +1,8 @@
+id: "SEA_FLOOR"
+layers:
+  - materials:
+      - "minecraft:gravel": 1
+    layers: 1
+  - materials:
+      - "minecraft:stone": 1
+    layers: 1
