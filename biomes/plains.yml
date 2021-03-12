@@ -26,6 +26,10 @@ extends: BASE
 
 
 
+color: 0x8db360
+  # TODO: Add description
+
+
 tags:
   - LAND
 

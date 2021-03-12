@@ -4,6 +4,7 @@
 id: "FOREST"
 vanilla: FOREST
 extends: BASE
+color: 0x056621
 tags:
   - LAND
 

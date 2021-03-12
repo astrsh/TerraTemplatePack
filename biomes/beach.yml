@@ -1,6 +1,7 @@
 id: "BEACH"
 vanilla: BEACH
 extends: BASE
+color: 0xfade55
 
 palette:
   - SHORE: 255

@@ -1,6 +1,7 @@
 id: "OCEAN"
 vanilla: OCEAN
 extends: BASE
+color: 0x000070
 tags:
   - OCEAN
 
