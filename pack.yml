@@ -44,7 +44,7 @@ biomes:
   # a few of them will be covered here - please refer to
   # the wiki for a full list.
 
-  type: PIPELINE
+  type: IMAGE
     # The 'Biome Provider Type'
     # There are several options including:
     # - SINGLE
@@ -61,6 +61,9 @@ biomes:
     # This key is only applicable when the biome
     # provider type is set to SINGLE. As you can guess,
     # this determines what that single biome will be.
+
+  image:
+    name: map-image.png
 
   resolution: 3
     # Resolution scales the size of both
