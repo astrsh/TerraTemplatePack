@@ -64,6 +64,7 @@ biomes:
 
   image:
     name: map-image.png
+    align: CENTER
 
   resolution: 3
     # Resolution scales the size of both
